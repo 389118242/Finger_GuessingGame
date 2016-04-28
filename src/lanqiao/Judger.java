@@ -24,7 +24,10 @@ public class Judger {
 		System.out.println("\t******************\n");
 		System.out.println("出拳规则：1.剪刀 2.石头 3.布");
 	}
-
+	
+	/**
+	 * 获取双方name
+	 */
 	public void askName() {
 		computer.inputName();
 		persion.inputName();
@@ -39,9 +42,11 @@ public class Judger {
 		}
 	}
 
+	/**
+	 * 开始游戏
+	 */
 	public void playGame() {
 		do {
-			System.out.print("请出拳：1.剪刀  2.石头 3.布（输入相应数字）");
 			int persionFist = persion.myFist();
 			int computerFist = computer.myFist();
 			switch (persionFist) {
@@ -89,12 +94,15 @@ public class Judger {
 		finalResult();
 	}
 
+	/**
+	 * 宣布游戏结果
+	 */
 	public void finalResult() {
 		System.out.println("------------------------------------");
 		System.out.println("\t"+persion.getPlayerName()+" VS "+computer.getPlayerName());
 		System.out.println("\t对战次数："+total);
 		if(total>(persion.getWinningTimes()+computer.getWinningTimes())){
-			System.out.println("平局次数："+(total-(persion.getWinningTimes()+computer.getWinningTimes())));
+			System.out.println("\t平局次数："+(total-(persion.getWinningTimes()+computer.getWinningTimes())));
 		}
 		System.out.println();
 		System.out.println("姓名\t得分");

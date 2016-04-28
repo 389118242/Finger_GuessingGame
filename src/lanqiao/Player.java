@@ -17,7 +17,14 @@ public abstract class Player {
 		this.winningTimes = winningTimes;
 	}
 	
+	/**
+	 * 获取出拳结果
+	 * @return 出拳结果[剪刀、石头、布]
+	 */
 	protected abstract int myFist();
 	
+	/**
+	 * 输入姓名
+	 */
 	protected abstract void inputName();
 }

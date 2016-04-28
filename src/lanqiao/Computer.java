@@ -6,14 +6,14 @@ import java.util.Scanner;
 public class Computer extends Player {
 
 	@Override
-	protected int myFist() {
-		return new Random().nextInt(3)+1;
+	public int myFist() {
+		return new Random().nextInt(3)+1;//随机生成出拳结果
 	}
 
 	@Override
 	public void inputName() {
-		System.out.print("请选择对方角色（1：刘备 2：孙权 3:曹操）：");
-		String result=null;
+		System.out.print("请选择对方角色（1：刘备 2：孙权 3:曹操）：");//提示用户选择对方角色
+		String result=null;//用于接收选择结果
 		switch (new Scanner(System.in).nextInt()) {
 		case 1:
 			result="刘备";
@@ -25,7 +25,7 @@ public class Computer extends Player {
 			result="曹操";
 			break;
 		}
-		setPlayerName(result);
+		setPlayerName(result);//将选择结果赋给playerName
 	}
 
 }
